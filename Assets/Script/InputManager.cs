@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
         motor = GetComponent<PlayerMotor>();
         look = GetComponent<PlayerLook>();
         playerActions.Jump.performed += ctx => motor.Jump();
+        //playerActions.DoorAccess.performed += ctx => motor.accessMove = true;
     }
 
     // Update is called once per frame
