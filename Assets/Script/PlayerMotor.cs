@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,7 @@ public class PlayerMotor : MonoBehaviour
     public float gravity = -9.8f;
     public float jumpHeight = 3f;
     public Animator doorAnimator; 
+    public bool isFighting = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,11 +49,12 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    public void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "Door" && Input.GetKey(KeyCode.E))
+        if (hit.gameObject.tag == "Enemy" && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            doorAnimator.Play("DoorOpen" , 0 , 0.0f);
+            GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+            Destroy(enemy);
         }
     }
 }

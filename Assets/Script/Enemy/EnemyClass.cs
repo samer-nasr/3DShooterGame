@@ -6,6 +6,7 @@ public class EnemyClass : MonoBehaviour
 {
     private StateMachine stateMachine;
     public NavMeshAgent agent;
+    public PlayerMotor playerMotor;
 
     public NavMeshAgent Agent { get => agent; }
     public GameObject Player { get => player; }
@@ -27,6 +28,7 @@ public class EnemyClass : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //playerMotor = new PlayerMotor();
         stateMachine = GetComponent<StateMachine>();
         agent = GetComponent<NavMeshAgent>();
         stateMachine.Initialise();
@@ -42,6 +44,13 @@ public class EnemyClass : MonoBehaviour
 
     public bool CanSeePlayer()
     {
+
+        /*if (playerMotor.isFighting)
+        {
+            Destroy(gameObject);
+        }*/
+
+
         if (player != null)
         {
             if(Vector3.Distance(transform.position , player.transform.position) < sightDistance)
@@ -63,6 +72,7 @@ public class EnemyClass : MonoBehaviour
                 }
             }
         }
+        
         return false;
     }
 }
