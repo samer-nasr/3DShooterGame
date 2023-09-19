@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758accd896bdbcc429e4c2fa584695a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
   gravity: -9.8
   jumpHeight: 1.5
   doorAnimator: {fileID: 674044742}
@@ -4748,7 +4748,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 307320207527063918, guid: 235a17574d512ef41bdbb2dcf3aa9345, type: 3}
       propertyPath: m_Speed
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1405979747706291547, guid: 235a17574d512ef41bdbb2dcf3aa9345, type: 3}
       propertyPath: m_TagString
