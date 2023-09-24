@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using System.Threading;
-using UnityEditor.UIElements;
+
 using UnityEngine;
+
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -39,28 +39,34 @@ public class PlayerInteract : MonoBehaviour
 
         if(Physics.Raycast(ray,out hit, distance, mask))
         {
+            Debug.Log(hit.transform.gameObject.tag);
+            
+
             if (hit.collider.GetComponent<Interactable>()!=null)
             {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 playerUI.UpdateText(interactable.promptMessage);
+
                 if (Input.GetKey(KeyCode.E))
                 {
                     interactable.BaseInteract();
+                    Debug.Log(interactable.name);
                     Thread.Sleep(200);
                 }
-                else if (interactable.name == "Enemy" || interactable.name == "Heal")
+                else if (interactable.name == "Cubert" )
                 {
                     time = time + 1f * Time.deltaTime;
                     if (time >= timeDelay)
                     {
                         time = 0f;
                         interactable.BaseInteract();
+                        
                     }
                 }
                
             }
             
         }
-
+ 
     }
 }

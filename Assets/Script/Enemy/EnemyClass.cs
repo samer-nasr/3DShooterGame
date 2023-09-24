@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.AI;
 public class EnemyClass : MonoBehaviour
@@ -11,7 +10,7 @@ public class EnemyClass : MonoBehaviour
     public NavMeshAgent Agent { get => agent; }
     public GameObject Player { get => player; }
     
-    public Path path;
+    public Path path ;
     private GameObject player;
     [Header("Sight Values")]
     public float sightDistance = 20f;
@@ -75,4 +74,6 @@ public class EnemyClass : MonoBehaviour
         
         return false;
     }
+
+
 }

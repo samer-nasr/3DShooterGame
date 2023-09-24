@@ -51,10 +51,12 @@ public class PlayerMotor : MonoBehaviour
 
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "Enemy" && Input.GetKeyDown(KeyCode.Mouse0))
+        if (hit.gameObject.tag == "Enemy" && Input.GetKeyDown(KeyCode.LeftControl))
         {
             GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-            Destroy(enemy);
+            //GameObject enemy = hit.gameObject;
+            //Destroy(enemy);
+            Debug.Log(hit.gameObject.tag);
         }
     }
 }
